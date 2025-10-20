@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+/>
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+<script src="scripts/map.js"></script>
+
+<body>
+  <nav class="navbar">
+  <h2>Destination Driver</h2>
+  <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+  <ul>
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="profile.html">Profile</a></li>
+    <li><a href="#" id="logoutBtn">Logout</a></li>
+  </ul>
+</nav>
+
+  <main>
+    <h3>Welcome, <span id="userName">User</span></h3>
+    <section id="dashboardContent"></section>
+  <div id="map" style="height: 400px; width: 100%; border-radius: 10px;"></div>
+  </main>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
