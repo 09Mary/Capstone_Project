@@ -8,8 +8,18 @@ class CustomUser(AbstractUser):
         ('admin', 'Admin'),
     )
 
-    role = models.CharField (max_length=20, choices=[('client', 'Client'), ('driver', 'Driver')] )
+    role = models.CharField (max_length=20, 
+                             choices=ROLE_CHOICES,
+                                        default='client')
+    
+    
     phone_number = models.CharField(max_length=20, blank=True, null=True)
 
     def __str__(self):
         return f"{self.username} ({self.role})"
+
+def save(self, *args, **kwargs):
+    # Automatically assign 'admin' role for superusers
+    if self.is_superuser:
+        self.role = 'admin'
+    super().save(*args, **kwargs)
