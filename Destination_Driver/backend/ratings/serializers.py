@@ -5,3 +5,4 @@ class RatingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Rating
         fields = ['id', 'trip', 'client', 'score', 'comment']
+        read_only_fields = ['id', 'trip', 'client']  # client & trip set by the view

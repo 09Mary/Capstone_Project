@@ -1,7 +1,7 @@
 from django.db import models
-from users.models import CustomUser # type: ignore
-from drivers.models import DriverProfile # type: ignore
-from vehicles.models import Vehicle # type: ignore
+from users.models import CustomUser 
+from drivers.models import DriverProfile 
+from vehicles.models import Vehicle 
 
 class TripBooking(models.Model):
     STATUS_CHOICES = (
@@ -17,7 +17,7 @@ class TripBooking(models.Model):
 
     pickup_location = models.CharField(max_length=255)
     destination = models.CharField(max_length=255)
-    date_time = models.DateTimeField()
+    date_time = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="pending")
 
     def __str__(self):
